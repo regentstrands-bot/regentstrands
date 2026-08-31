@@ -4,13 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>REGENT STRANDS</title>
-<link rel="stylesheet" href="styles.css"><link rel="icon" href="regent-logo.jpeg">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="regent-logo.jpeg">
 </head>
+
 <body>
-<div class="creator-bar">As a creator or an influencer, scroll directly to the bottom to submit your application. We would love to hear from you.</div>
+
+<div class="creator-bar">
+  As a creator or an influencer, scroll directly to the bottom to submit your application. We would love to hear from you.
+</div>
 
 <header>
-  <div class="brand"><img class="brand-logo" src="regent-logo.jpeg" alt="Regent Strands logo"><strong>REGENT STRANDS</strong></div>
+  <div class="brand">
+    <img class="brand-logo" src="regent-logo.jpeg" alt="Regent Strands logo">
+    <strong>REGENT STRANDS</strong>
+  </div>
+
   <div class="header-actions">
     <input id="search" placeholder="Search 20 wig types" aria-label="Search wig types">
     <button id="savedBtn" type="button">♡ <span id="savedCount">0</span></button>
@@ -20,89 +29,488 @@
 </header>
 
 <main>
+
 <section class="hero">
-  <img src="https://images.pexels.com/photos/34832456/pexels-photo-34832456/free-photo-of-portrait-of-a-confident-black-woman-with-curly-hair.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Black woman with beautiful curly hair">
+  <img
+    src="https://images.pexels.com/photos/34832456/pexels-photo-34832456/free-photo-of-portrait-of-a-confident-black-woman-with-curly-hair.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    alt="Black woman with beautiful curly hair">
+
   <div class="hero-overlay">
     <small>MEET REGENT STRANDS</small>
-    <h1>Hair is the crown. Make every version of you unforgettable.</h1>
-    <p>Luxury textures, elegant construction, and signature styles created for women who want their hair to feel personal, powerful, and completely theirs.</p>
-    <p class="contact-copy">For orders and enquiries, shop your items here, screenshot your cart and send it to us below.<br>TikTok: @regent.strands<br>Email: regentstrands@gmail.com</p>
-    <button class="primary" type="button" onclick="document.getElementById('wardrobe').scrollIntoView()">Explore my collection ↘</button>
+
+    <h1>
+      Hair is the crown. Make every version of you unforgettable.
+    </h1>
+
+    <p>
+      Luxury textures, elegant construction, and signature styles created
+      for women who want their hair to feel personal, powerful, and completely theirs.
+    </p>
+
+    <p class="contact-copy">
+      For orders and enquiries, shop your items here, screenshot your cart and send it to us below.<br>
+      TikTok: @regent.strands<br>
+      Email: regentstrands@gmail.com
+    </p>
+
+    <button
+      class="primary"
+      type="button"
+      onclick="document.getElementById('wardrobe').scrollIntoView()">
+      Explore my collection ↘
+    </button>
   </div>
 </section>
 
+
 <section class="featured">
+
   <article class="featured-card featured-two-images">
+
     <div class="feature-images">
-      <img src="https://raw.githubusercontent.com/noirstrands/noir-strands/main/feature-deep.jpg" alt="Loose deep wave hair">
-      <img src="https://raw.githubusercontent.com/noirstrands/noir-strands/main/feature-wave.jpg" alt="Loose deep wave texture">
+      <img
+        src="https://raw.githubusercontent.com/noirstrands/noir-strands/main/feature-deep.jpg"
+        alt="Loose deep wave hair">
+
+      <img
+        src="https://raw.githubusercontent.com/noirstrands/noir-strands/main/feature-wave.jpg"
+        alt="Loose deep wave texture">
     </div>
+
     <small>THE FEATURED TEXTURE</small>
+
     <h2>Loose Deep Waves</h2>
-    <p>Soft movement, deep definition, and effortless volume. A signature texture made to turn every entrance into a moment.</p>
-    <div class="feature-buy"><b>$500</b><button class="primary" type="button">Shop Loose Deep Waves ↗</button></div>
+
+    <p>
+      Soft movement, deep definition, and effortless volume.
+      A signature texture made to turn every entrance into a moment.
+    </p>
+
+    <div class="feature-buy">
+      <b>$500</b>
+      <button class="primary" type="button">
+        Shop Loose Deep Waves ↗
+      </button>
+    </div>
+
   </article>
+
 
   <article class="featured-card featured-single-image">
-    <img src="https://raw.githubusercontent.com/noirstrands/noir-strands/main/layered-body-wave.jpg" alt="Layered body wave hair">
+
+    <img
+      src="https://raw.githubusercontent.com/noirstrands/noir-strands/main/layered-body-wave.jpg"
+      alt="Layered body wave hair">
+
     <small>THE LAYERED EDIT</small>
+
     <h2>Layered Body Wave</h2>
-    <p>Polished layers, sleek movement, and a flattering silhouette for your next signature look.</p>
-    <div class="feature-buy"><b>$350</b><button class="primary" type="button">Shop Now ↗</button></div>
+
+    <p>
+      Polished layers, sleek movement, and a flattering silhouette
+      for your next signature look.
+    </p>
+
+    <div class="feature-buy">
+      <b>$350</b>
+      <button class="primary" type="button">
+        Shop Now ↗
+      </button>
+    </div>
+
   </article>
+
 </section>
 
+
 <section id="wardrobe" class="wardrobe">
+
   <div class="section-head">
     <small>CURATED FOR YOUR NEXT HAIR TRANSFORMATION</small>
     <h2>The wig wardrobe</h2>
     <p>Showing 1–20 of 20 wig types</p>
   </div>
-  <button class="filter-toggle" id="filterToggle" type="button">Reset filters</button>
+
+  <button class="filter-toggle" id="filterToggle" type="button">
+    Reset filters
+  </button>
+
   <div id="chips" class="chips"></div>
+
   <div class="filters">
-    <label>LENGTH<select><option>Any length</option><option>8 inch</option><option>12 inch</option><option>16 inch</option><option>20 inch</option><option>24 inch</option><option>30 inch</option></select></label>
-    <label>TEXTURE<select><option>Any texture</option></select></label>
-    <label>COLOR<select><option>Any color</option><option>Natural Black</option><option>Pink</option><option>Blonde</option><option>Burgundy</option></select></label>
-    <label>LACE TYPE<select><option>Any lace type</option><option>HD Lace</option><option>Transparent Lace</option><option>4x4 Closure</option><option>13x4 Lace Front</option></select></label>
-    <label>PRICE<select><option>Any price</option><option>Under $250</option><option>$250–$400</option><option>$400+</option></select></label>
+
+    <label>
+      LENGTH
+      <select>
+        <option>Any length</option>
+        <option>8 inch</option>
+        <option>12 inch</option>
+        <option>16 inch</option>
+        <option>20 inch</option>
+        <option>24 inch</option>
+        <option>30 inch</option>
+      </select>
+    </label>
+
+    <label>
+      TEXTURE
+      <select>
+        <option>Any texture</option>
+      </select>
+    </label>
+
+    <label>
+      COLOR
+      <select>
+        <option>Any color</option>
+        <option>Natural Black</option>
+        <option>Pink</option>
+        <option>Blonde</option>
+        <option>Burgundy</option>
+      </select>
+    </label>
+
+    <label>
+      LACE TYPE
+      <select>
+        <option>Any lace type</option>
+        <option>HD Lace</option>
+        <option>Transparent Lace</option>
+        <option>4x4 Closure</option>
+        <option>13x4 Lace Front</option>
+      </select>
+    </label>
+
+    <label>
+      PRICE
+      <select>
+        <option>Any price</option>
+        <option>Under $250</option>
+        <option>$250–$400</option>
+        <option>$400+</option>
+      </select>
+    </label>
+
   </div>
+
   <div id="products" class="products"></div>
+
 </section>
+
 
 <section class="checkout">
+
   <small>LUXURY, ALL THE WAY THROUGH</small>
-  <h2>A polished checkout for your new signature look.</h2>
-  <p>Build your bag, review your order, and contact Regent Strands when you are ready to complete your purchase.</p>
-  <div class="notice"><strong>Prices shown on the website are not fixed. Screenshot your cart and send it to us for your perfect discounted price.<br>TikTok: @regent.strands<br>Email: regentstrands@gmail.com</strong></div>
-  <p><b>TikTok: @regent.strands</b><br><b>Email: regentstrands@gmail.com</b></p>
-  <div class="pay"><span>📱<br>Apple Pay</span><span>▣<br>Card</span><span>✉<br>More</span></div>
+
+  <h2>
+    A polished checkout for your new signature look.
+  </h2>
+
+  <p>
+    Build your bag, review your order, and contact Regent Strands
+    when you are ready to complete your purchase.
+  </p>
+
+  <div class="notice">
+    <strong>
+      Prices shown on the website are not fixed. Screenshot your cart
+      and send it to us for your perfect discounted price.<br>
+      TikTok: @regent.strands<br>
+      Email: regentstrands@gmail.com
+    </strong>
+  </div>
+
+  <p>
+    <b>TikTok: @regent.strands</b><br>
+    <b>Email: regentstrands@gmail.com</b>
+  </p>
+
+  <div class="pay">
+    <span>📱<br>Apple Pay</span>
+    <span>▣<br>Card</span>
+    <span>✉<br>More</span>
+  </div>
+
 </section>
+
+
+<!-- CREATOR APPLICATION -->
 
 <section id="apply" class="application">
-  <div class="welcome">WELCOME LOVELIES</div>
-  <h2>Creator application</h2>
-  <p>Please complete the Regent Strands application. Your application will open in our official Google Form.</p>
-  <a class="submit form-link" href="https://forms.gle/siKkFLcvCFajfT5M7" target="_blank" rel="noopener">Open application form ↗</a>
+
+  <div class="application-inner">
+
+    <div class="welcome">
+      WELCOME LOVELIES
+    </div>
+
+    <small>REGENT STRANDS CREATOR COLLECTIVE</small>
+
+    <h2>Creator Application</h2>
+
+    <p>
+      We are looking for confident, creative individuals who love beauty,
+      fashion and self-expression. Tell us a little about yourself and
+      your platform below.
+    </p>
+
+    <form
+      id="creatorForm"
+      action="https://formsubmit.co/ajax/regentstrands@gmail.com"
+      method="POST"
+      autocomplete="on">
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Regent Strands Creator Application">
+
+      <input
+        type="hidden"
+        name="_template"
+        value="table">
+
+      <input
+        type="hidden"
+        name="_captcha"
+        value="false">
+
+      <input
+        type="hidden"
+        name="_honey"
+        value="">
+
+      <label>
+        FULL NAME
+        <input
+          type="text"
+          name="Full Name"
+          placeholder="Enter your full name"
+          required>
+      </label>
+
+      <label>
+        EMAIL ADDRESS
+        <input
+          type="email"
+          name="Email"
+          placeholder="Enter your email address"
+          required>
+      </label>
+
+      <label>
+        PHONE NUMBER
+        <input
+          type="tel"
+          name="Phone Number"
+          placeholder="Enter your phone number"
+          required>
+      </label>
+
+      <label>
+        LOCATION
+        <input
+          type="text"
+          name="Location"
+          placeholder="City / Country"
+          required>
+      </label>
+
+      <label>
+        TIKTOK / INSTAGRAM USERNAME
+        <input
+          type="text"
+          name="Social Media"
+          placeholder="@yourusername"
+          required>
+      </label>
+
+      <label>
+        SOCIAL MEDIA PLATFORM
+        <select name="Primary Platform" required>
+          <option value="">Select a platform</option>
+          <option>TikTok</option>
+          <option>Instagram</option>
+          <option>TikTok & Instagram</option>
+          <option>Other</option>
+        </select>
+      </label>
+
+      <label>
+        FOLLOWER COUNT
+        <input
+          type="text"
+          name="Follower Count"
+          placeholder="e.g. 10,000"
+          required>
+      </label>
+
+      <label>
+        CONTENT / CREATOR TYPE
+        <select name="Creator Type" required>
+          <option value="">Select one</option>
+          <option>Beauty Creator</option>
+          <option>Hair Creator</option>
+          <option>Fashion Creator</option>
+          <option>Lifestyle Creator</option>
+          <option>Beauty & Lifestyle</option>
+          <option>Other</option>
+        </select>
+      </label>
+
+      <label>
+        TELL US ABOUT YOURSELF
+        <textarea
+          name="About You"
+          rows="5"
+          placeholder="Tell us about yourself and your content..."
+          required></textarea>
+      </label>
+
+      <label>
+        WHY WOULD YOU LIKE TO WORK WITH REGENT STRANDS?
+        <textarea
+          name="Why Regent Strands"
+          rows="5"
+          placeholder="Tell us why you would love to join the Regent Strands Creator Collective..."
+          required></textarea>
+      </label>
+
+      <label>
+        HOW DID YOU HEAR ABOUT REGENT STRANDS?
+        <select name="How You Heard" required>
+          <option value="">Select one</option>
+          <option>TikTok</option>
+          <option>Instagram</option>
+          <option>Friend</option>
+          <option>Online</option>
+          <option>Other</option>
+        </select>
+      </label>
+
+      <label class="checkbox-label">
+        <input
+          type="checkbox"
+          name="Consent"
+          value="I agree to be contacted by Regent Strands regarding my creator application."
+          required>
+        <span>
+          I agree to be contacted by Regent Strands regarding my creator application.
+        </span>
+      </label>
+
+      <button
+        id="creatorSubmit"
+        class="submit"
+        type="submit">
+        SUBMIT CREATOR APPLICATION ↗
+      </button>
+
+      <div
+        id="formMessage"
+        class="form-message"
+        aria-live="polite">
+      </div>
+
+    </form>
+
+  </div>
+
 </section>
+
 </main>
 
-<footer>REGENT STRANDS · Terms & Support · Privacy Policy</footer>
+
+<footer>
+  REGENT STRANDS · Terms & Support · Privacy Policy
+</footer>
+
 
 <div id="cartDrawer" class="drawer">
+
   <button class="close" type="button">×</button>
+
   <h2>Your cart</h2>
+
   <div id="cartItems"></div>
+
   <p id="cartTotal"></p>
+
 </div>
+
 
 <div id="savedDrawer" class="drawer saved">
+
   <button class="close" type="button">×</button>
+
   <h2>Saved looks</h2>
+
   <p>Your favorite styles, all in one place.</p>
+
   <div id="savedItems"></div>
+
 </div>
 
+
 <script src="script.js"></script>
+
+
+<script>
+const creatorForm = document.getElementById("creatorForm");
+const formMessage = document.getElementById("formMessage");
+const creatorSubmit = document.getElementById("creatorSubmit");
+
+creatorForm.addEventListener("submit", async function(event) {
+
+  event.preventDefault();
+
+  creatorSubmit.disabled = true;
+  creatorSubmit.textContent = "SUBMITTING APPLICATION...";
+
+  formMessage.textContent = "";
+  formMessage.className = "form-message";
+
+  try {
+
+    const formData = new FormData(creatorForm);
+
+    const response = await fetch(creatorForm.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        "Accept": "application/json"
+      }
+    });
+
+    if (response.ok) {
+
+      creatorForm.reset();
+
+      formMessage.textContent =
+        "Thank you for applying to the Regent Strands Creator Collective. Your application has been received.";
+
+      formMessage.classList.add("success");
+
+    } else {
+
+      throw new Error("Submission failed");
+
+    }
+
+  } catch (error) {
+
+    formMessage.textContent =
+      "Something went wrong while submitting your application. Please try again.";
+
+    formMessage.classList.add("error");
+
+  }
+
+  creatorSubmit.disabled = false;
+  creatorSubmit.textContent = "SUBMIT CREATOR APPLICATION ↗";
+
+});
+</script>
+
 </body>
 </html>

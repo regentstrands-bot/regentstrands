@@ -254,165 +254,196 @@
       your platform below.
     </p>
 
-    <form
-      id="creatorForm"
-      action="https://formsubmit.co/ajax/regentstrands@gmail.com"
-      method="POST"
-      autocomplete="on">
+<form action="https://formsubmit.co/regentstrands@gmail.com" method="POST">
 
-      <input
-        type="hidden"
-        name="_subject"
-        value="New Regent Strands Creator Application">
+  <label>
+    1. First and last name *
+    <input name="name" required placeholder="First and last name">
+  </label>
 
-      <input
-        type="hidden"
-        name="_template"
-        value="table">
+  <label>
+    2. Email address *
+    <input name="email" type="email" required placeholder="Email address">
+  </label>
 
-      <input
-        type="hidden"
-        name="_captcha"
-        value="false">
+  <label>
+    3. Home address for shipping *
+    <textarea name="shipping_address" required placeholder="Home address for shipping"></textarea>
+  </label>
 
-      <input
-        type="hidden"
-        name="_honey"
-        value="">
+  <label>
+    4. Phone number *
+    <input name="phone" required placeholder="Phone number">
+  </label>
 
+  <label>
+    5. TikTok username *
+    <input name="tiktok_username" required placeholder="TikTok username">
+  </label>
+
+  <label>
+    6. Salary allowance *
+    <div class="choice">
       <label>
-        FULL NAME
-        <input
-          type="text"
-          name="Full Name"
-          placeholder="Enter your full name"
-          required>
-      </label>
-
-      <label>
-        EMAIL ADDRESS
-        <input
-          type="email"
-          name="Email"
-          placeholder="Enter your email address"
-          required>
+        <input type="radio" name="salary_frequency" value="Weekly" required>
+        Weekly
       </label>
 
       <label>
-        PHONE NUMBER
-        <input
-          type="tel"
-          name="Phone Number"
-          placeholder="Enter your phone number"
-          required>
+        <input type="radio" name="salary_frequency" value="Monthly">
+        Monthly
+      </label>
+    </div>
+  </label>
+
+  <label>
+    7. Who referred you? *
+    <input name="referred_by" required placeholder="Who referred you?">
+  </label>
+
+  <label>
+    8. Any previous experience? *
+    <div class="choice">
+      <label>
+        <input type="radio" name="previous_experience" value="Yes" required>
+        Yes
       </label>
 
       <label>
-        LOCATION
-        <input
-          type="text"
-          name="Location"
-          placeholder="City / Country"
-          required>
+        <input type="radio" name="previous_experience" value="No">
+        No
+      </label>
+    </div>
+  </label>
+
+  <label>
+    9. How’d you like to receive payment? *
+    <div class="choice">
+      <label>
+        <input type="radio" name="payment_method" value="Paycheck" required>
+        Paycheck
+      </label>
+    </div>
+  </label>
+
+  <label>
+    10. Banking options we accept *
+    <div class="choice">
+      <label>
+        <input type="radio" name="banking_option" value="Local banks" required>
+        Local banks
       </label>
 
       <label>
-        TIKTOK / INSTAGRAM USERNAME
-        <input
-          type="text"
-          name="Social Media"
-          placeholder="@yourusername"
-          required>
+        <input type="radio" name="banking_option" value="Credit Union">
+        Credit Union
       </label>
 
       <label>
-        SOCIAL MEDIA PLATFORM
-        <select name="Primary Platform" required>
-          <option value="">Select a platform</option>
-          <option>TikTok</option>
-          <option>Instagram</option>
-          <option>TikTok & Instagram</option>
-          <option>Other</option>
-        </select>
+        <input type="radio" name="banking_option" value="Both">
+        Both
+      </label>
+    </div>
+  </label>
+
+  <label>
+    11. Local bank or credit union name *
+    <input
+      name="bank_or_credit_union_name"
+      required
+      placeholder="Local bank or credit union name">
+  </label>
+
+  <label>
+    12. Mention 3 preferred hairs and colors *
+    <textarea
+      name="preferred_hairs_colors"
+      required
+      placeholder="Mention 3 preferred hairs and colors"></textarea>
+  </label>
+
+  <label>
+    13. By posting our brand items, you agree to use only approved materials in their original form, give clear credit to our brand, and use them solely for promotional purposes. Do not imply endorsement, share sensitive content, or use our items inappropriately. We reserve the right to revoke usage at any time, and posting signifies your agreement to these terms. *
+
+    <div class="choice">
+      <label>
+        <input type="radio" name="brand_terms_agreement" value="Yes" required>
+        Yes
       </label>
 
       <label>
-        FOLLOWER COUNT
-        <input
-          type="text"
-          name="Follower Count"
-          placeholder="e.g. 10,000"
-          required>
+        <input type="radio" name="brand_terms_agreement" value="No">
+        No
+      </label>
+    </div>
+  </label>
+
+  <label>
+    14. Why are you the best fit for us? *
+    <textarea
+      name="best_fit"
+      required
+      placeholder="Why are you the best fit for us?"></textarea>
+  </label>
+
+  <label>
+    15. READ AND UNDERSTAND!
+
+    <div class="agreement-copy">
+      Please understand that Regent Strands will communicate all approved
+      collaboration, product, shipping, and payment arrangements directly
+      with selected creators. Never send money, passwords, PINs, card
+      information, account numbers, or other confidential financial
+      information in response to a creator application.
+    </div>
+
+    <strong>DO YOU UNDERSTAND? *</strong>
+
+    <div class="choice">
+      <label>
+        <input type="radio" name="understands" value="Yes" required>
+        Yes
       </label>
 
       <label>
-        CONTENT / CREATOR TYPE
-        <select name="Creator Type" required>
-          <option value="">Select one</option>
-          <option>Beauty Creator</option>
-          <option>Hair Creator</option>
-          <option>Fashion Creator</option>
-          <option>Lifestyle Creator</option>
-          <option>Beauty & Lifestyle</option>
-          <option>Other</option>
-        </select>
+        <input type="radio" name="understands" value="No">
+        No
       </label>
+    </div>
+  </label>
 
-      <label>
-        TELL US ABOUT YOURSELF
-        <textarea
-          name="About You"
-          rows="5"
-          placeholder="Tell us about yourself and your content..."
-          required></textarea>
-      </label>
+  <label>
+    16. Do you have any questions? If you do, write it out here.
+    <textarea
+      name="questions"
+      placeholder="Do you have any questions? If you do, write it out here."></textarea>
+  </label>
 
-      <label>
-        WHY WOULD YOU LIKE TO WORK WITH REGENT STRANDS?
-        <textarea
-          name="Why Regent Strands"
-          rows="5"
-          placeholder="Tell us why you would love to join the Regent Strands Creator Collective..."
-          required></textarea>
-      </label>
+  <input
+    type="hidden"
+    name="_subject"
+    value="REGENT STRANDS Creator Application">
 
-      <label>
-        HOW DID YOU HEAR ABOUT REGENT STRANDS?
-        <select name="How You Heard" required>
-          <option value="">Select one</option>
-          <option>TikTok</option>
-          <option>Instagram</option>
-          <option>Friend</option>
-          <option>Online</option>
-          <option>Other</option>
-        </select>
-      </label>
+  <input
+    type="hidden"
+    name="_template"
+    value="table">
 
-      <label class="checkbox-label">
-        <input
-          type="checkbox"
-          name="Consent"
-          value="I agree to be contacted by Regent Strands regarding my creator application."
-          required>
-        <span>
-          I agree to be contacted by Regent Strands regarding my creator application.
-        </span>
-      </label>
+  <input
+    type="hidden"
+    name="_captcha"
+    value="false">
 
-      <button
-        id="creatorSubmit"
-        class="submit"
-        type="submit">
-        SUBMIT CREATOR APPLICATION ↗
-      </button>
+  <input
+    type="text"
+    name="_honey"
+    style="display:none">
 
-      <div
-        id="formMessage"
-        class="form-message"
-        aria-live="polite">
-      </div>
+  <button class="submit" type="submit">
+    SUBMIT CREATOR APPLICATION ↗
+  </button>
 
-    </form>
+</form>
 
   </div>
 

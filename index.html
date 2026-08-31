@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>REGENT STRANDS</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="creator-bar">As a creator or an influencer, scroll directly to the bottom to submit your application. We would love to hear from you.</div>
+
+<header>
+  <div class="brand"><span class="brand-mark">R</span><strong>REGENT STRANDS</strong></div>
+  <div class="header-actions">
+    <input id="search" placeholder="Search 20 wig types" aria-label="Search wig types">
+    <button id="savedBtn" type="button">♡ <span id="savedCount">0</span></button>
+    <button id="cartBtn" type="button">🛍 <span id="cartCount">0</span></button>
+    <button class="menu" type="button">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <img src="https://images.pexels.com/photos/34832456/pexels-photo-34832456/free-photo-of-portrait-of-a-confident-black-woman-with-curly-hair.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Black woman with beautiful curly hair">
+  <div class="hero-overlay">
+    <small>MEET REGENT STRANDS</small>
+    <h1>Hair is the crown. Make every version of you unforgettable.</h1>
+    <p>Luxury textures, elegant construction, and signature styles created for women who want their hair to feel personal, powerful, and completely theirs.</p>
+    <p class="contact-copy">For orders and enquiries, shop your items here, screenshot your cart and send it to us below.<br>TikTok: @regent.strands<br>Email: regentstrands@gmail.com</p>
+    <button class="primary" type="button" onclick="document.getElementById('wardrobe').scrollIntoView()">Explore my collection ↘</button>
+  </div>
+</section>
+
+<section class="featured">
+  <article class="featured-card featured-two-images">
+    <div class="feature-images">
+      <img src="https://raw.githubusercontent.com/noirstrands/noir-strands/main/feature-deep.jpg" alt="Loose deep wave hair">
+      <img src="https://raw.githubusercontent.com/noirstrands/noir-strands/main/feature-wave.jpg" alt="Loose deep wave texture">
+    </div>
+    <small>THE FEATURED TEXTURE</small>
+    <h2>Loose Deep Waves</h2>
+    <p>Soft movement, deep definition, and effortless volume. A signature texture made to turn every entrance into a moment.</p>
+    <div class="feature-buy"><b>$500</b><button class="primary" type="button">Shop Loose Deep Waves ↗</button></div>
+  </article>
+
+  <article class="featured-card featured-single-image">
+    <img src="https://raw.githubusercontent.com/noirstrands/noir-strands/main/layered-body-wave.jpg" alt="Layered body wave hair">
+    <small>THE LAYERED EDIT</small>
+    <h2>Layered Body Wave</h2>
+    <p>Polished layers, sleek movement, and a flattering silhouette for your next signature look.</p>
+    <div class="feature-buy"><b>$350</b><button class="primary" type="button">Shop Now ↗</button></div>
+  </article>
+</section>
+
+<section id="wardrobe" class="wardrobe">
+  <div class="section-head">
+    <small>CURATED FOR YOUR NEXT HAIR TRANSFORMATION</small>
+    <h2>The wig wardrobe</h2>
+    <p>Showing 1–20 of 20 wig types</p>
+  </div>
+  <button class="filter-toggle" id="filterToggle" type="button">Reset filters</button>
+  <div id="chips" class="chips"></div>
+  <div class="filters">
+    <label>LENGTH<select><option>Any length</option><option>8 inch</option><option>12 inch</option><option>16 inch</option><option>20 inch</option><option>24 inch</option><option>30 inch</option></select></label>
+    <label>TEXTURE<select><option>Any texture</option></select></label>
+    <label>COLOR<select><option>Any color</option><option>Natural Black</option><option>Pink</option><option>Blonde</option><option>Burgundy</option></select></label>
+    <label>LACE TYPE<select><option>Any lace type</option><option>HD Lace</option><option>Transparent Lace</option><option>4x4 Closure</option><option>13x4 Lace Front</option></select></label>
+    <label>PRICE<select><option>Any price</option><option>Under $250</option><option>$250–$400</option><option>$400+</option></select></label>
+  </div>
+  <div id="products" class="products"></div>
+</section>
+
+<section class="checkout">
+  <small>LUXURY, ALL THE WAY THROUGH</small>
+  <h2>A polished checkout for your new signature look.</h2>
+  <p>Build your bag, review your order, and contact Regent Strands when you are ready to complete your purchase.</p>
+  <div class="notice"><strong>Prices shown on the website are not fixed. Screenshot your cart and send it to us for your perfect discounted price.<br>TikTok: @regent.strands<br>Email: regentstrands@gmail.com</strong></div>
+  <p><b>TikTok: @regent.strands</b><br><b>Email: regentstrands@gmail.com</b></p>
+  <div class="pay"><span>📱<br>Apple Pay</span><span>▣<br>Card</span><span>✉<br>More</span></div>
+</section>
+
+<section id="apply" class="application">
+  <div class="welcome">WELCOME LOVELIES</div>
+  <h2>Creator application</h2>
+  <p>Please complete the Regent Strands application. Your application will open in our official Google Form.</p>
+  <a class="submit form-link" href="https://forms.gle/siKkFLcvCFajfT5M7" target="_blank" rel="noopener">Open application form ↗</a>
+</section>
+</main>
+
+<footer>REGENT STRANDS · Terms & Support · Privacy Policy</footer>
+
+<div id="cartDrawer" class="drawer">
+  <button class="close" type="button">×</button>
+  <h2>Your cart</h2>
+  <div id="cartItems"></div>
+  <p id="cartTotal"></p>
+</div>
+
+<div id="savedDrawer" class="drawer saved">
+  <button class="close" type="button">×</button>
+  <h2>Saved looks</h2>
+  <p>Your favorite styles, all in one place.</p>
+  <div id="savedItems"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

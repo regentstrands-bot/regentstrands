@@ -37,7 +37,7 @@ if(creatorForm){
     creatorSubmit.disabled=true;
     creatorSubmit.textContent='Submitting application…';
     try{
-      const response=await fetch(creatorForm.action,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(creatorForm)))});
+      const response=await fetch(creatorForm.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(creatorForm)});
       const data=await response.json().catch(()=>({}));
       if(response.ok && (data.success===true || data.success===undefined)){
         creatorForm.reset();

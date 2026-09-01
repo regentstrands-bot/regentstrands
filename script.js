@@ -26,32 +26,16 @@ function update(){document.querySelector('#cartCount').textContent=cart.length;d
 function openDrawer(id){document.querySelector(id).classList.add('open')}function closeAll(){document.querySelectorAll('.drawer').forEach(x=>x.classList.remove('open'))}
 document.querySelector('#cartBtn').onclick=()=>openDrawer('#cartDrawer');document.querySelector('#savedBtn').onclick=()=>openDrawer('#savedDrawer');document.querySelectorAll('.close').forEach(b=>b.onclick=closeAll);document.querySelector('#search').oninput=()=>render();document.querySelector('#filterToggle').onclick=()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));document.querySelector('.chip').classList.add('active');render()};
 
-const creatorForm=document.querySelector('#creatorForm');
-const creatorSubmit=document.querySelector('#creatorSubmit');
-const formStatus=document.querySelector('#formStatus');
-if(creatorForm){
-  creatorForm.addEventListener('submit',async(e)=>{
-    e.preventDefault();
-    formStatus.className='form-status';
-    formStatus.textContent='';
-    creatorSubmit.disabled=true;
-    creatorSubmit.textContent='Submitting application…';
-    try{
-      const response=await fetch(creatorForm.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(creatorForm)});
-      const data=await response.json().catch(()=>({}));
-      if(response.ok && (data.success===true || data.success===undefined)){
-        creatorForm.reset();
-        formStatus.className='form-status success';
-        formStatus.textContent='Application received. Redirecting…';
-        setTimeout(()=>{ window.location.href='thank-you.html'; }, 700);
-      }else{throw new Error(data.message||'Unable to submit the application.');}
-    }catch(error){
-      formStatus.className='form-status error';
-      formStatus.textContent='We could not submit your application right now. Please try again.';
-    }finally{
-      creatorSubmit.disabled=false;
-      creatorSubmit.textContent='Submit creator application ↗';
+const creatorForm = document.querySelector('#creatorForm');
+
+if (creatorForm) {
+  // Allow the form to submit normally to FormSubmit.
+  // The _next field in index.html handles the redirect.
+  creatorForm.addEventListener('submit', () => {
+    const creatorSubmit = document.querySelector('#creatorSubmit');
+    if (creatorSubmit) {
+      creatorSubmit.disabled = true;
+      creatorSubmit.textContent = 'Submitting application…';
     }
   });
 }
-render();update();

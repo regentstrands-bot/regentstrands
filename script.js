@@ -1,5 +1,4 @@
-const raw='https://raw.githubusercontent.com/noirstrands/noir-strands/main/';
-const products=[
+const creatorForm = document.querySelector('#creatorForm');
 ['Pixie Cut','Pixie Cut',191,'Natural Black','8 inch','HD Lace','pixie-cut.jpg'],
 ['Pixie Curls','Pixie Curls',222,'Espresso','12 inch','Transparent Lace','pixie-curls.jpg'],
 ['Bone Straight','Bone Straight',253,'Honey Blonde','16 inch','4x4 Closure','bone-straight.jpg'],
@@ -29,13 +28,33 @@ document.querySelector('#cartBtn').onclick=()=>openDrawer('#cartDrawer');documen
 const creatorForm = document.querySelector('#creatorForm');
 
 if (creatorForm) {
-  // Allow the form to submit normally to FormSubmit.
-  // The _next field in index.html handles the redirect.
+  const frame = document.createElement('iframe');
+  frame.name = 'formsubmitFrame';
+  frame.title = 'Form submission';
+  frame.style.display = 'none';
+  document.body.appendChild(frame);
+
+  creatorForm.target = 'formsubmitFrame';
+
   creatorForm.addEventListener('submit', () => {
     const creatorSubmit = document.querySelector('#creatorSubmit');
+
     if (creatorSubmit) {
       creatorSubmit.disabled = true;
       creatorSubmit.textContent = 'Submitting application…';
     }
+
+    let redirected = false;
+
+    const redirect = () => {
+      if (redirected) return;
+      redirected = true;
+      window.location.href = 'thank-you.html';
+    };
+
+    frame.addEventListener('load', redirect, { once: true });
+
+    // Backup redirect if the FormSubmit response takes longer.
+    setTimeout(redirect, 5000);
   });
 }

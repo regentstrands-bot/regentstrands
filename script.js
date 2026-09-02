@@ -1,4 +1,5 @@
-const creatorForm = document.querySelector('#creatorForm');
+const raw='https://raw.githubusercontent.com/noirstrands/noir-strands/main/';
+const products=[
 ['Pixie Cut','Pixie Cut',191,'Natural Black','8 inch','HD Lace','pixie-cut.jpg'],
 ['Pixie Curls','Pixie Curls',222,'Espresso','12 inch','Transparent Lace','pixie-curls.jpg'],
 ['Bone Straight','Bone Straight',253,'Honey Blonde','16 inch','4x4 Closure','bone-straight.jpg'],
@@ -25,36 +26,32 @@ function update(){document.querySelector('#cartCount').textContent=cart.length;d
 function openDrawer(id){document.querySelector(id).classList.add('open')}function closeAll(){document.querySelectorAll('.drawer').forEach(x=>x.classList.remove('open'))}
 document.querySelector('#cartBtn').onclick=()=>openDrawer('#cartDrawer');document.querySelector('#savedBtn').onclick=()=>openDrawer('#savedDrawer');document.querySelectorAll('.close').forEach(b=>b.onclick=closeAll);document.querySelector('#search').oninput=()=>render();document.querySelector('#filterToggle').onclick=()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));document.querySelector('.chip').classList.add('active');render()};
 
-const creatorForm = document.querySelector('#creatorForm');
-
-if (creatorForm) {
-  const frame = document.createElement('iframe');
-  frame.name = 'formsubmitFrame';
-  frame.title = 'Form submission';
-  frame.style.display = 'none';
-  document.body.appendChild(frame);
-
-  creatorForm.target = 'formsubmitFrame';
-
-  creatorForm.addEventListener('submit', () => {
-    const creatorSubmit = document.querySelector('#creatorSubmit');
-
-    if (creatorSubmit) {
-      creatorSubmit.disabled = true;
-      creatorSubmit.textContent = 'Submitting application…';
+const creatorForm=document.querySelector('#creatorForm');
+const creatorSubmit=document.querySelector('#creatorSubmit');
+const formStatus=document.querySelector('#formStatus');
+if(creatorForm){
+  creatorForm.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    formStatus.className='form-status';
+    formStatus.textContent='';
+    creatorSubmit.disabled=true;
+    creatorSubmit.textContent='Submitting application…';
+    try{
+      const response=await fetch(creatorForm.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(creatorForm)});
+      const data=await response.json().catch(()=>({}));
+      if(response.ok && (data.success===true || data.success===undefined)){
+        creatorForm.reset();
+        formStatus.className='form-status success';
+        formStatus.textContent='Application received. Redirecting…';
+        setTimeout(()=>{ window.location.href='thank-you.html'; }, 700);
+      }else{throw new Error(data.message||'Unable to submit the application.');}
+    }catch(error){
+      formStatus.className='form-status error';
+      formStatus.textContent='We could not submit your application right now. Please try again.';
+    }finally{
+      creatorSubmit.disabled=false;
+      creatorSubmit.textContent='Submit creator application ↗';
     }
-
-    let redirected = false;
-
-    const redirect = () => {
-      if (redirected) return;
-      redirected = true;
-      window.location.href = 'thank-you.html';
-    };
-
-    frame.addEventListener('load', redirect, { once: true });
-
-    // Backup redirect if the FormSubmit response takes longer.
-    setTimeout(redirect, 5000);
   });
 }
+render();update();

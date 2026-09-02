@@ -38,8 +38,10 @@ if(creatorForm){
     creatorSubmit.textContent='Submitting application…';
     try{
       const response=await fetch(creatorForm.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(creatorForm)});
-      const data=await response.json().catch(()=>({}));
-      if(response.ok && (data.success===true || data.success===undefined)){
+      const responseText=await response.text();
+      let data={};
+      try{ data=JSON.parse(responseText); }catch(_){}
+      if(response.ok && (data.success===true || data.success===undefined || data.success==='true')){
         creatorForm.reset();
         formStatus.className='form-status success';
         formStatus.textContent='Application received. Redirecting…';

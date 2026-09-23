@@ -30,30 +30,13 @@ const creatorForm=document.querySelector('#creatorForm');
 const creatorSubmit=document.querySelector('#creatorSubmit');
 const formStatus=document.querySelector('#formStatus');
 if(creatorForm){
-  creatorForm.addEventListener('submit',async(e)=>{
-    e.preventDefault();
-    formStatus.className='form-status';
-    formStatus.textContent='';
-    creatorSubmit.disabled=true;
-    creatorSubmit.textContent='Submitting application…';
-    try{
-      const response=await fetch(creatorForm.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(creatorForm)});
-      const responseText=await response.text();
-      let data={};
-      try{ data=JSON.parse(responseText); }catch(_){}
-      if(response.ok && (data.success===true || data.success===undefined || data.success==='true')){
-        creatorForm.reset();
-        formStatus.className='form-status success';
-        formStatus.textContent='Application received. Redirecting…';
-        setTimeout(()=>{ window.location.href='thank-you.html'; }, 700);
-      }else{throw new Error(data.message||'Unable to submit the application.');}
-    }catch(error){
-      formStatus.className='form-status error';
-      formStatus.textContent='We could not submit your application right now. Please try again.';
-    }finally{
-      creatorSubmit.disabled=false;
-      creatorSubmit.textContent='Submit creator application ↗';
+creatorForm.addEventListener('submit', () => {
+    const submitButton = creatorForm.querySelector('button[type="submit"]');
+
+    if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
     }
-  });
+});
 }
 render();update();

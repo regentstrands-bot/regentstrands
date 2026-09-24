@@ -30,11 +30,36 @@ const creatorForm=document.querySelector('#creatorForm');
 const creatorSubmit=document.querySelector('#creatorSubmit');
 const formStatus=document.querySelector('#formStatus');
 if(creatorForm){
-  creatorForm.addEventListener('submit',()=>{
+  creatorForm.addEventListener('submit', async (event)=>{
+    event.preventDefault();
+
     const submitButton=creatorForm.querySelector('button[type="submit"]');
     if(submitButton){
       submitButton.disabled=true;
       submitButton.textContent='Submitting application…';
+    }
+    if(formStatus) formStatus.textContent='Submitting application…';
+
+    try{
+      const ajaxUrl=creatorForm.action.replace('https://formsubmit.co/','https://formsubmit.co/ajax/');
+      const response=await fetch(ajaxUrl,{
+        method:'POST',
+        body:new FormData(creatorForm),
+        headers:{'Accept':'application/json'}
+      });
+
+      if(!response.ok) throw new Error('Submission failed');
+
+      const result=await response.json().catch(()=>({}));
+      if(result.success===false) throw new Error(result.message||'Submission failed');
+
+      window.location.href='thank-you.html';
+    }catch(error){
+      if(formStatus) formStatus.textContent='Please complete the verification and try again.';
+      if(submitButton){
+        submitButton.disabled=false;
+        submitButton.textContent='Submit application';
+      }
     }
   });
 }

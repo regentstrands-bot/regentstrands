@@ -30,13 +30,40 @@ const creatorForm=document.querySelector('#creatorForm');
 const creatorSubmit=document.querySelector('#creatorSubmit');
 const formStatus=document.querySelector('#formStatus');
 if(creatorForm){
-creatorForm.addEventListener('submit', () => {
+creatorForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
     const submitButton = creatorForm.querySelector('button[type="submit"]');
 
     if (submitButton) {
         submitButton.disabled = true;
         submitButton.textContent = 'Submitting...';
     }
-});
-}
+
+    if(formStatus){
+        formStatus.textContent = 'Submitting application…';
+    }
+
+    try {
+        await fetch(creatorForm.action, {
+            method: 'POST',
+            body: new FormData(creatorForm),
+            mode: 'no-cors'
+        });
+
+        if(formStatus){
+            formStatus.textContent = 'Application submitted successfully.';
+        }
+
+        window.location.href = 'thank-you.html';
+    } catch (error) {
+        if(formStatus){
+            formStatus.textContent = 'Unable to submit right now. Please try again.';
+        }
+        if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit application';
+        }
+    }
+});}
 render();update();

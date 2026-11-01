@@ -79,25 +79,42 @@ const creatorForm=document.querySelector('#creatorForm');
 const formStatus=document.querySelector('#formStatus');
 if(creatorForm){
  const submitButton=creatorForm.querySelector('button[type="submit"]');
+ const creatorFrame=document.querySelector('#creatorFormFrame');
+ let submissionPending=false;
+
+ // The Apps Script response is loaded inside this hidden iframe.
+ // Use its load event as a reliable fallback if cross-frame postMessage is blocked.
+ if(creatorFrame){
+  creatorFrame.addEventListener('load',()=>{
+   if(!submissionPending)return;
+   submissionPending=false;
+   window.location.href='thank-you.html';
+  });
+ }
+
  creatorForm.addEventListener('submit',()=>{
   const street=creatorForm.querySelector('[name="shipping_street"]').value.trim();
   const city=creatorForm.querySelector('[name="shipping_city"]').value.trim();
   const state=creatorForm.querySelector('[name="shipping_state"]').value.trim();
   const zip=creatorForm.querySelector('[name="shipping_zip"]').value.trim();
   creatorForm.querySelector('[name="shipping_address"]').value=[street,city,state,zip].join(', ');
+  submissionPending=true;
   submitButton.disabled=true;
   submitButton.textContent='Submitting application…';
   if(formStatus)formStatus.textContent='Submitting application…';
  });
+
  window.addEventListener('message',event=>{
   if(!event.data||event.data.type!=='REGENT_APPLICATION_SUBMITTED')return;
   if(event.data.status==='success'){
+   submissionPending=false;
    window.location.href='thank-you.html';
   }else{
+   submissionPending=false;
    if(formStatus)formStatus.textContent='We could not submit your application. Please try again.';
+   submitButton.disabled=false;
+   submitButton.textContent='Submit application';
   }
-  submitButton.disabled=false;
-  submitButton.textContent='Submit application';
  });
 }
 render();update();

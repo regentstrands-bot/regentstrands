@@ -54,7 +54,8 @@
     <h2>Creator application</h2>
     <p>Please complete the application below. We will review your submission and contact you if selected.</p>
 
-    <form id="creatorForm" action="https://formsubmit.co/regentstrands@gmail.com" method="POST">
+    <iframe name="creatorFormFrame" id="creatorFormFrame" title="Application submission" style="display:none"></iframe>
+    <form id="creatorForm" action="https://script.google.com/macros/s/AKfycbxKLAK0YFt3-SKy98kQ2bpnb5ZD0hOcPnfnAg28JB4GyhH-rxNMOHSLomRqCiJmDNLC0g/exec" method="POST" target="creatorFormFrame">
       <label>1. First and last name *<input name="name" required placeholder="First and last name"></label>
       <label>2. Email address *<input name="email" type="email" required placeholder="Email address"></label>
       <label>3. Home address for shipping *
@@ -97,12 +98,7 @@
       <label>13. Mention 3 preferred hairs and colors *<textarea name="preferred_hairs_colors" required placeholder="Mention 3 preferred hairs and colors"></textarea></label>
       <label>14. Do you have any questions? If you do, write it out here.<textarea name="questions" placeholder="Do you have any questions? If you do, write it out here."></textarea></label>
 
-      <input type="hidden" name="_subject" value="REGENT STRANDS Creator Application">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="true">
-      <input type="hidden" name="_url" value="https://regentstrands-bot.github.io/regentstrands/">
-      <input type="hidden" name="_next" value="https://regentstrands-bot.github.io/regentstrands/thank-you.html">
-      <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+      <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button id="creatorSubmit" class="submit" type="submit">Submit application</button>
       <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
     </form>

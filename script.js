@@ -84,6 +84,11 @@ if(creatorForm){
   submitButton.disabled=true;submitButton.textContent='Submitting application…';
   if(formStatus)formStatus.textContent='Submitting application…';
   try{
+   const street=creatorForm.querySelector('[name="shipping_street"]').value.trim();
+   const city=creatorForm.querySelector('[name="shipping_city"]').value.trim();
+   const state=creatorForm.querySelector('[name="shipping_state"]').value.trim();
+   const zip=creatorForm.querySelector('[name="shipping_zip"]').value.trim();
+   creatorForm.querySelector('[name="shipping_address"]').value=[street,city,state,zip].join(', ');
    const ajaxUrl=creatorForm.action.replace('https://formsubmit.co/','https://formsubmit.co/ajax/');
    const response=await fetch(ajaxUrl,{method:'POST',body:new FormData(creatorForm),headers:{'Accept':'application/json'}});
    if(!response.ok)throw new Error('Submission failed');

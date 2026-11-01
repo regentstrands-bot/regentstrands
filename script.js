@@ -92,8 +92,7 @@ if(creatorForm){
  window.addEventListener('message',event=>{
   if(!event.data||event.data.type!=='REGENT_APPLICATION_SUBMITTED')return;
   if(event.data.status==='success'){
-   if(formStatus)formStatus.textContent='Thank you! Your application has been received.';
-   creatorForm.reset();
+   window.location.href='thank-you.html';
   }else{
    if(formStatus)formStatus.textContent='We could not submit your application. Please try again.';
   }

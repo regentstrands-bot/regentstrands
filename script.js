@@ -3,7 +3,7 @@ const products=[
 ['Pixie Cut','Pixie Cut',191,'Natural Black','8 inch','HD Lace','pixie-cut.jpg'],
 ['Pixie Curls','Pixie Curls',222,'Espresso','12 inch','Transparent Lace','pixie-curls.jpg'],
 ['Bone Straight','Bone Straight',139,'Natural Black','16 inch','','DD67239A-8B14-4DB1-BAB3-6D5982B589BD.png'],
-['Body Wave','Body Wave',283,'Burgundy','20 inch','5x5 Closure','body-wave-card.jpg'],
+['Body Wave','Body Wave',129,'Burgundy','20 inch','5x5 Closure','body-wave-card.jpg'],
 ['Deep Wave','Deep Wave',314,'Natural Black','','13x4 Lace Front','E7991C70-6C31-4265-B47F-29089799952B.png'],
 ['Water Wave','Water Wave',129,'Natural Black','5x5','HD Lace','IMG_0881.jpeg'],
 ['Loose Deep Waves','Loose Deep Waves',349,'Black','','HD Lace','IMG_0885.jpeg'],
